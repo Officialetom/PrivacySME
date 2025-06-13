@@ -9,7 +9,10 @@ def load_data():
     if not os.path.exists(DATA_FILE):
         return []
     with open(DATA_FILE, "rb") as f:
-        return json.loads(decrypt_data(f.read()))
+         records = json.loads(decrypt_data(f.read()))
+        df = pd.DataFrame(records)
+        st.dataframe(df)
+        st.download_button("Export as CSV", df.to_csv(index=False).encode(), "sme_records.csv", "text/csv")
 
 def save_data(data):
     with open(DATA_FILE, "wb") as f:
