@@ -3,7 +3,7 @@ import json
 import os
 from utils.encryptor import decrypt_data, encrypt_data
 
-DATA_FILE = "sme_records.json"
+DATA_FILE = "data/sme_records.json"
 
 def load_data():
     if not os.path.exists(DATA_FILE):
