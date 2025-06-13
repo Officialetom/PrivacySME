@@ -1,7 +1,6 @@
 import streamlit as st
 import json
 import os
-from utils.session import is_logged_in
 from utils.crypto import decrypt_data, encrypt_data
 
 DATA_FILE = "sme_records.json"
@@ -25,9 +24,9 @@ def delete_record(index):
     return False
 
 def app():
-    if not is_logged_in():
-        st.error("You must be logged in to view this page.")
-        return
+    if not st.session_state.get("authenticated", False):
+        st.warning("Please login first.")
+        st.stop()
 
     st.title("View & Manage SME Records")
     data = load_data()
