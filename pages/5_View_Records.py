@@ -6,7 +6,7 @@ import pandas as pd
 
 DATA_FILE = "data/sme_records.json"
 
-st.title("View SME Records")
+st.title("View SME Records ubana")
 
 if not st.session_state.get("authenticated", False):
     st.warning("Please login first.")
