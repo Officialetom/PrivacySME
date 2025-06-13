@@ -1,7 +1,7 @@
 import streamlit as st
 import json
 import os
-from utils.crypto import decrypt_data, encrypt_data
+from utils.encryptor import decrypt_data, encrypt_data
 
 DATA_FILE = "sme_records.json"
 
