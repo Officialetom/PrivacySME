@@ -14,7 +14,7 @@ if not st.session_state.get("authenticated", False):
     st.stop()
 
 # Check if user is admin
-is_admin = st.session_state.get("user_role") == "admin"
+is_admin = st.session_state.get("Role") == "admin"
 
 if os.path.exists(DATA_FILE):
     with open(DATA_FILE, "rb") as f:
