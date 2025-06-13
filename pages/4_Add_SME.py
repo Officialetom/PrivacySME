@@ -6,7 +6,7 @@ from utils.logger import log_event
 
 DATA_FILE = "data/sme_records.json"
 
-st.title("Add SME Record")
+st.title("Add SME Record check")
 
 if not st.session_state.get("authenticated", False):
     st.warning("Please login first.")
